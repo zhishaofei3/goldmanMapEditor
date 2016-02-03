@@ -18,8 +18,8 @@ app.post('/level', jsonParser, function (req, res) {
 function saveData(dataStr) {
     var data = JSON.parse(dataStr);
     var len = data.length;
-    for (var i = 1; i < len; i++) {
-        fs.writeFile("level/level" + i +".json", JSON.stringify(data[i]), function (err) {
+    for (var i = 0; i < len; i++) {
+        fs.writeFile("level/level" + (i + 1) +".json", JSON.stringify(data[i]), function (err) {
             if (err) {
                 return console.error(err);
             }
